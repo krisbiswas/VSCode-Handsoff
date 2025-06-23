@@ -91,9 +91,24 @@ public class SegmentTree {
             if(e < start || s > end){
                 return -1;
             }
-            int lMax = left.getMax(s, e);
-            int rMax = right.getMax(s, e);
-            return Math.max(lMax, rMax);
+            int mid = start + (end - start)/2;
+            int leftMax = Integer.MIN_VALUE;
+            if(s <= mid){
+                if(e <= mid){
+                    leftMax = left.getMax(s, e);
+                }else{
+                    leftMax = left.getMax(s, mid);
+                }
+            }
+            int rightMax = Integer.MIN_VALUE;
+            if(e >= mid){
+                if(s <= mid){
+                    rightMax = right.getMax(mid, e);
+                } else {
+                    rightMax = right.getMax(s, e);
+                }
+            }
+            return Math.max(leftMax, rightMax);
         }
 
         public int getMin(int s, int e) {
@@ -121,8 +136,9 @@ public class SegmentTree {
     }
 
     int calcDiff(int s, int e){
-        int max = tree.getMax(s,e);
-        int min = tree.getMin(s,e);
-        return max - min;
+        // int max = tree.getMax(s,e);
+        // int min = tree.getMin(s,e);
+        // return max - min;
+        return tree.getMax(s,e);
     }
 }
