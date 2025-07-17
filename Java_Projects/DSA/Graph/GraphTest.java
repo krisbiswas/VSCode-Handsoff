@@ -1,4 +1,4 @@
-package Java_Projects.DSA.Graph;
+package Graph;
 
 public class GraphTest {
     public static void main(String[] args) {

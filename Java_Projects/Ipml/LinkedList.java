@@ -1,4 +1,4 @@
-package Java_Projects.Ipml;
+package Ipml;
 
 class Node{
     int val;

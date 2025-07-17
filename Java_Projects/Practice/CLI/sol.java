@@ -1,4 +1,4 @@
-package Practise.CLI;
+package Practice.CLI;
 
 class sol{
     public static void main(String[] args) {

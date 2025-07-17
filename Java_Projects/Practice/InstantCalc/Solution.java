@@ -1,4 +1,4 @@
-package Practise.InstantCalc;
+package Practice.InstantCalc;
 
 public class Solution {
 
