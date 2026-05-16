@@ -5,6 +5,5 @@ enum LocaleKeys {
   SOUND_SOURCE,
   AMBIENT_SOUND,
   SPACE_FIT,
-  ON,
   OFF,
 }

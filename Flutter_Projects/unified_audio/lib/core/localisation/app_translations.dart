@@ -11,6 +11,14 @@ class AppTranslations extends Translations {
     Locale("zh", "CN"),
   ];
 
+  /// Asset filename stem for [locale], e.g. `en_US`.
+  static String assetKeyFor(Locale locale) {
+    if (locale.countryCode == null || locale.countryCode!.isEmpty) {
+      return locale.languageCode;
+    }
+    return '${locale.languageCode}_${locale.countryCode}';
+  }
+
   // Static map to hold all loaded language keys
   static final Map<String, Map<String, String>> _keys = {};
 
@@ -21,7 +29,7 @@ class AppTranslations extends Translations {
       String jsonString;
       String localeString;
       try {
-        localeString = "${locale.languageCode}${locale.countryCode == null ? "" : "_${locale.countryCode}"}";
+        localeString = assetKeyFor(locale);
         jsonString = await rootBundle.loadString('assets/lang/$localeString.json');
       } catch (e) {
         localeString = "en_US";

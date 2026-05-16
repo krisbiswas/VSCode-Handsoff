@@ -8,7 +8,10 @@ import 'package:unified_audio/navigation/routes.dart';
 import 'package:unified_audio/themes/app_theme.dart';
 
 class UnifiedAudioDashboard extends StatelessWidget {
-  const UnifiedAudioDashboard({super.key});
+  /// When set (e.g. in integration tests), overrides [Get.deviceLocale].
+  final Locale? initialLocale;
+
+  const UnifiedAudioDashboard({super.key, this.initialLocale});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class UnifiedAudioDashboard extends StatelessWidget {
       initialRoute: AppRoutes.dashboard,
       getPages: AppRouter.pages,
       translations: AppTranslations(),
-      locale: Get.deviceLocale ?? AppTranslations.fallbackLocale,
+      locale: initialLocale ?? Get.deviceLocale ?? AppTranslations.fallbackLocale,
       supportedLocales: AppTranslations.supportedLocales,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
