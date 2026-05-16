@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.unified_audio"
-    compileSdk = 36//flutter.compileSdkVersion
+    compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -24,8 +24,8 @@ android {
         applicationId = "com.example.unified_audio"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 28//flutter.minSdkVersion
-        targetSdk = 36//flutter.targetSdkVersion
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }

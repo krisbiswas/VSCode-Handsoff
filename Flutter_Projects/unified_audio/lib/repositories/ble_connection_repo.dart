@@ -5,7 +5,7 @@ class BleConnectionRepo {
   final BleDatasource _datasource;
   BleConnectionRepo(this._datasource);
 
-  Stream<Device> get startScan => _datasource.startScan.map((dataDevice) {
+  Stream<Device> get startScan => _datasource.startScan().map((dataDevice) {
         return Device(name: dataDevice.name, id: dataDevice.id, addr: dataDevice.id, adv: dataDevice.manufacturerData);
       });
 

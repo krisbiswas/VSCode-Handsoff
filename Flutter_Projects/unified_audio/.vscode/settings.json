@@ -1,7 +1,8 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.updateBuildConfiguration": "automatic",
     "[dart]": {
         "editor.rulers": [120]
     },
-    "dart.lineLength": 120
+    "dart.lineLength": 120,
+    "java.compile.nullAnalysis.mode": "automatic"
 }

@@ -1,0 +1,10 @@
+enum LocaleKeys {
+  DASHBOARD,
+  SETTINGS,
+  INFORMATION,
+  SOUND_SOURCE,
+  AMBIENT_SOUND,
+  SPACE_FIT,
+  ON,
+  OFF,
+}

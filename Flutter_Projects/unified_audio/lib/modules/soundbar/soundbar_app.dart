@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unified_audio/navigation/app_router.dart';
+import 'package:unified_audio/navigation/routes.dart';
 import 'package:unified_audio/themes/app_theme.dart';
 
 class SoundbarApp extends StatelessWidget {
@@ -11,8 +11,7 @@ class SoundbarApp extends StatelessWidget {
       title: 'Soundbar Unified Audio',
       theme: AppTheme.materialTheme,
       darkTheme: AppTheme.customTheme,
-      initialRoute: AppRouter.soundbar,
-      onGenerateRoute: AppRouter.generateRoute,
+      initialRoute: AppRoutes.soundbar,
     );
   }
 }
