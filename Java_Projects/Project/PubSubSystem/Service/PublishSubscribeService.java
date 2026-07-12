@@ -1,14 +1,19 @@
+package Service;
 import java.util.Map;
 import java.util.HashMap;
 import Subscribers.Subscriber;
+import Topic.Topic;
 
 public class PublishSubscribeService {
     Map<String, Topic> subscribersMap = new HashMap<>();
 
-    public Topic createTopic(String name) {
+    public void createTopic(String name) {
+        if(subscribersMap.containsKey(name)){
+            System.out.println("Topic already exists: " + name);
+            return ;
+        }
         Topic topic = new Topic(name);
         subscribersMap.put(name, topic);
-        return topic;
     }
 
     public void publish(String author, String topicName, String message) {
@@ -44,5 +49,10 @@ public class PublishSubscribeService {
             return;
         }
         topic.unsubscribe(subscriber);
+    }
+
+    public void close() {
+        subscribersMap.values().forEach(topic -> topic.close());
+        subscribersMap.clear();
     }
 }
