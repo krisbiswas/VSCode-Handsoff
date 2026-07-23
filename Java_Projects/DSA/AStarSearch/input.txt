@@ -1,0 +1,22 @@
+TC 1:
+#0 A B 6
+#0 B C 10
+#0 A C 15
+#0 B D 2
+#0 C D 1
+#1 A D
+#1 B D
+
+TC 2:
+#0 X Y 1
+#0 Y Z 2
+#0 X Z 10
+#0 Z W 4
+#0 Y W 8
+#1 X Z
+#1 X W
+
+TC 3:
+#0 P Q 3
+#0 R S 5
+#1 P S
